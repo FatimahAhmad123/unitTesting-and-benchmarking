@@ -1,5 +1,3 @@
-#include <iostream>
-#include <cmath>
 #include "../include/codility.h"
 
 int Codility::binaryGap(int N)
@@ -30,4 +28,22 @@ int Codility::binaryGap(int N)
 	}
 
 	return largestGap;
+}
+
+std::vector<int> Codility::circularRotation(std::vector<int> &A, int k)
+{
+	int n = A.size();
+	k = k % n;
+
+	std::vector<int> rotatedVector = A;
+
+	// Push first d elements from last to the beginning
+	for (int i = 0; i < k; i++)
+	{
+		int val = A.back();
+		A.pop_back();
+		A.insert(A.begin(), val);
+	}
+
+	return A;
 }
