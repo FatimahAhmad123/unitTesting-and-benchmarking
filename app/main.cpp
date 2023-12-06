@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../include/codility.h"
+#include "codility.h"
 
 int main()
 {

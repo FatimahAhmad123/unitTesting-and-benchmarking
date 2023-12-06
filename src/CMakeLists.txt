@@ -3,8 +3,6 @@ project(UnitTestBenchmark)
 
 set(CMAKE_CXX_STANDARD 17)
 
-file(GLOB SOURCES *.cpp)
+add_library(codility codility.cpp)
 
-add_library(codility ${SOURCES})
-
-target_include_directories(codility PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+target_include_directories(codility PUBLIC ${CMAKE_SOURCE_DIR}/include)
