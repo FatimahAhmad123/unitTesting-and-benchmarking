@@ -4,7 +4,7 @@
 TEST(BinaryGapTest, RegularCases)
 {
 	Codility codility;
-	ASSERT_EQ(codility.binaryGap(9), 2);
+	ASSERT_EQ(codility.binaryGap(33), 4);
 	ASSERT_EQ(codility.binaryGap(529), 4);
 	ASSERT_EQ(codility.binaryGap(51272), 4);
 }
@@ -17,6 +17,22 @@ TEST(BinaryGapTest, OutOfBoundValues)
 	ASSERT_EQ(codility.binaryGap(2147483649), 0);
 }
 
+TEST(BinaryGapTest, NotBetweenOnes)
+{
+	Codility codility;
+
+	ASSERT_EQ(codility.binaryGap(32), 0);
+	ASSERT_EQ(codility.binaryGap(52), 1);
+}
+
+TEST(BinaryGapTest, EqualGaps)
+{
+	Codility codility;
+
+	ASSERT_EQ(codility.binaryGap(36), 2);
+	ASSERT_EQ(codility.binaryGap(546), 3);
+}
+
 TEST(CircularRotationTest, RegularCases)
 {
 	Codility codility;
@@ -26,9 +42,13 @@ TEST(CircularRotationTest, RegularCases)
 	std::vector<int> result = codility.circularRotation(A, 3);
 
 	ASSERT_EQ(result, expected);
+}
+TEST(CircularRotationTest, EmptyVector)
+{
+	Codility codility;
 
-	A = {};
-	expected = {};
+	std::vector<int> A = {};
+	std::vector<int> expected = {};
 	ASSERT_EQ(codility.circularRotation(A, 3), expected);
 }
 

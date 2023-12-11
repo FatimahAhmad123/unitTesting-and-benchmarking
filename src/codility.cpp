@@ -22,17 +22,13 @@ int Codility::binaryGap(int N)
 			{
 				foundFirstOne = true;
 			}
-			else if (foundFirstOne && !foundSecondOne)
-			{
-				foundSecondOne = true;
-			}
 			else
 			{
 				largestGap = std::max(largestGap, currentGap);
 				currentGap = 0;
 			}
 		}
-		else if (foundFirstOne && !foundSecondOne)
+		else if (foundFirstOne)
 		{
 			currentGap++;
 		}
