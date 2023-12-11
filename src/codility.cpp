@@ -10,7 +10,6 @@ int Codility::binaryGap(int N)
 	int largestGap = 0;
 	int currentGap = 0;
 	bool foundFirstOne = false;
-	bool foundSecondOne = false;
 
 	while (N > 0)
 	{
