@@ -9,19 +9,32 @@ int Codility::binaryGap(int N)
 
 	int largestGap = 0;
 	int currentGap = 0;
+	bool foundFirstOne = false;
+	bool foundSecondOne = false;
 
 	while (N > 0)
 	{
 		int binary = N % 2;
 
-		if (binary == 0)
+		if (binary == 1)
+		{
+			if (!foundFirstOne)
+			{
+				foundFirstOne = true;
+			}
+			else if (foundFirstOne && !foundSecondOne)
+			{
+				foundSecondOne = true;
+			}
+			else
+			{
+				largestGap = std::max(largestGap, currentGap);
+				currentGap = 0;
+			}
+		}
+		else if (foundFirstOne && !foundSecondOne)
 		{
 			currentGap++;
-		}
-		else if (currentGap > 0)
-		{
-			largestGap = std::max(largestGap, currentGap);
-			currentGap = 0;
 		}
 
 		N = N / 2;

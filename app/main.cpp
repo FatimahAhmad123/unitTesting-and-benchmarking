@@ -12,7 +12,8 @@ int main()
 	std::cout << codility.binaryGap(53) << std::endl;		  // Expected: 1
 	std::cout << codility.binaryGap(2147483647) << std::endl; // Expected: 0
 	std::cout << codility.binaryGap(2147483648) << std::endl; // Expected: 0
-	std::cout << codility.binaryGap(0) << std::endl;		  // Expected: 0
+	std::cout << codility.binaryGap(32) << std::endl;		  // Expected: 0
+	std::cout << codility.binaryGap(52) << std::endl;		  // Expected: 1
 
 	std::vector<int> A = {1, 2, 3, 4, 5, 6, 7};
 	int k = 5;
